@@ -1,0 +1,130 @@
+---
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import HeroSection from "@components/sections/landing/HeroSection.astro";
+import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
+import ClientsSection from "@components/sections/landing/ClientsSection.astro";
+import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
+import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
+import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
+import PricingSection from "@components/sections/pricing/PricingSection.astro";
+import FAQ from "@components/sections/misc/FAQ.astro";
+import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
+import heroImage from "@images/doctor-home.png";
+import faqs from "@data/faqs.json";
+import features from "@data/features.json";
+import pricing from "@data/pricing.json";
+import featureImage from "@images/auci5.png";
+import construction from "@images/dataPrivacy.jpg";
+import tools from "@images/analytics1.jpg";
+import dashboard from "@images/dashboard-image.jpg";
+
+const avatarSrcs: Array<string> = [
+  "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
+  "https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
+  "https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&&auto=format&fit=facearea&facepad=3&w=300&h=300&q=80",
+  "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
+];
+---
+
+<MainLayout>
+  
+
+  <HeroSection
+    title=`<span class = "text-blue1">Empowering Healthcare with  Innovation <span
+        class="text-blue-900 dark:text-yellow-400">Samarth Meditech</span><span class="text-green1"></span></span>`
+    subTitle="Transforming healthcare with cutting-edge technology solutions. Simplify, optimize, and grow with Samarth Meditech."
+    primaryBtn="Start Exploring"
+    primaryBtnURL="/products"
+    secondaryBtn="Contact Sales Team"
+    secondaryBtnURL="/contact"        
+    src={heroImage} 
+    alt="Stack of ScrewFast product boxes containing assorted hardware tools"
+  />
+
+  
+
+  <FeaturesGeneral
+    title="Meeting Industry Demands"
+    subTitle="Samarth Meditech is at the forefront of healthcare innovation, delivering cutting-edge solutions that address the evolving needs of the medical industry. Our products are designed to enhance efficiency, improve patient care, and streamline operations for healthcare providers."
+    
+    alt="ScrewFast products in floating boxes"
+    features={features}
+  />
+
+  <FeaturesNavs
+    title=`Customize <span class="text-blue-900 dark:text-yellow-400">Samarth Meditech</span>'s solutions to perfectly meet your healthcare and business needs."
+`
+    tabs={[
+      {
+        heading: "Statistical Insights",
+        content:"The statistical insights features in Ayuci and Asset Management provide comprehensive reports, predictive analytics, and data visualization. These tools help users generate detailed reports, forecast trends, and visualize complex data in an easy-to-understand format.",
+        svg: "tools",
+        src: tools,
+        alt: "Yellow and black heavy equipment on brown grass field",
+        first: true,
+      },
+      {
+        heading: "Intuitive Dashboards",
+        content:
+        "Both Ayuci and Asset Management offer intuitive dashboards that are visually appealing and easy to navigate. The dashboards are designed to provide real-time updates, interactive elements, and customizable views to help users quickly access and interpret important data.",
+        svg: "dashboard",
+        src: dashboard,
+        alt: "A screenshot or graphic representation of the intuitive dashboard",
+        second: true,
+      },
+      {
+        heading: "Data Privacy and Security",
+        content:
+          "Data privacy and security are top priorities for Ayuci and Asset Management. Both products implement robust encryption methods to protect sensitive information. They also adhere to industry-standard security protocols and compliance regulations to ensure that user data is secure.",
+        svg: "house",
+        src: construction,
+        alt: "Gray metal building frame near tower crane during daytime",
+      },
+    ]}
+  />
+
+  <TestimonialsSection
+    title="Go Digital with our Products"
+    subTitle=""
+    ;
+    testimonials={[
+      {
+        content:"Customize Samarth Meditech's Ayuci and Asset Management solutions to perfectly meet your healthcare and business needs.",
+        author: "",
+        role: "",
+        avatarSrc:
+          "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=1453&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+      },
+    ]}
+    statistics={[
+      {
+        count: "70k+",
+        description:
+          "Customers empowered — from individual users to large healthcare organizations",
+      },
+      {
+        count: "35%",
+        description:
+          "Increase in project efficiency with Samarth Meditech tools and services",
+      },
+      {
+        count: "15.3%",
+        description:
+          "Reduction in maintenance costs reported by long-term clients",
+      },
+      {
+        count: "2x",
+        description: "Quicker assembly using innovative fastening solutions",
+      },
+    ]}
+  />
+
+
+
+  <HeroSectionAlt
+    title="Optimizing Operational Efficiency"
+    subTitle="Harness the power of Ayuci and Asset Management to elevate your healthcare and business operations with Samarth Meditech."
+    url="/contact"
+  />
+</MainLayout>

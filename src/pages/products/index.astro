@@ -1,0 +1,133 @@
+---
+// Importing necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import CardSmall from "@components/ui/cards/CardSmall.astro";
+import CardWide from "@components/ui/cards/CardWide.astro";
+import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
+import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
+// Importing necessary functions from Astro
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { SITE } from "@data/constants";
+
+// Fetching all the product related content and sorting it by main.id
+const product: CollectionEntry<"products">[] = (
+  await getCollection("products")
+).sort(
+  (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
+    a.data.main.id - b.data.main.id,
+);
+
+// Define variables for page content
+const title: string = "Products";
+const subTitle: string =
+  "Explore the innovation and reliability of Samarth Meditech's solutions, designed for healthcare professionals and business leaders. Each of our products is meticulously crafted to ensure durability and precision, providing you with the tools you need for every aspect of healthcare management.";
+
+// Testimonial data that will be rendered in the component
+const testimonials = [
+  // First testimonial data
+  {
+    content:
+      " \"Ayuci has completely transformed the way we manage our hospital operations. From booking appointments to generating IPD and OPD reports, everything is seamless. The ability to add doctors and employees across all roles and keep track of schedules has saved us so much time. It’s user-friendly and integrates well with our payment systems. Ayuci is now an essential part of our day-to-day operations\" ",
+    author: "Jason Clark",
+    role: "Site Foreman | TopBuild",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+  // Second testimonial data
+  {
+    content:
+      " \"Ayuci has made hospital management incredibly efficient. The system’s ability to handle appointments, billing, and report generation is top-notch. We’ve also benefited from its intuitive interface for managing both OPD and IPD services. It's a powerful tool for streamlining healthcare management, and we couldn’t be happier with its performance.\" ",
+    author: "Maria Gonzalez",
+    role: "Interior Designer | Creative Spaces",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+  // Third testimonial data
+  {
+    content:
+      " \"Our asset management process has been revolutionized since we started using this software. The ability to categorize assets and track them across multiple departments and branches is extremely helpful. The barcode scanning feature makes audits much faster and more accurate. It’s an all-in-one solution for managing assets, and I highly recommend it!\" ",
+    author: "Richard Kim",
+    role: "Master Carpenter | WoodWright",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+];
+
+const pageTitle: string = `Products | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://screwfast.uk/products",
+    "url": "https://screwfast.uk/products",
+    "name": "Hardware Tools | ScrewFast",
+    "description": "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://screwfast.uk",
+      "name": "ScrewFast",
+      "description": "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs."
+    },
+    "inLanguage": "en-US"
+  }}
+>
+  <div
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
+      <div class="flex items-center gap-12">
+        <h1
+          class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+        >
+          {title}
+        </h1>
+        {
+          subTitle && (
+            <p class="hidden max-w-screen-sm text-pretty text-neutral-600 dark:text-neutral-400 md:block">
+              {subTitle}
+            </p>
+          )
+        }
+      </div>
+      <PrimaryCTA title="Customer Stories" url="#testimonials" noArrow={true} />
+    </div>
+    
+    <!--Displaying products in alternating styles. Alternative product gets different card styling.-->
+    <!--Maps through all product entries and displays them with either CardSmall or CardWide based on their position.-->
+    <section class="grid grid-cols-1 gap-2 sm:grid-cols-4 md:gap-6 xl:gap-8">
+      {
+        product.map((product, index) => {
+          const position = index % 4;
+          if (position === 0 || position === 3) {
+            return <CardWide product={product} />;
+          } else {
+            return <CardWide product={product} />;
+          }
+        })
+      }
+    </section>
+  </div>
+  <!--Features statistics section-->
+  <FeaturesStatsAlt
+    title="Why choose our Products?"
+    subTitle="Elevate your healthcare management with Samarth Meditech's advanced solutions. From enhancing patient care to streamlining business processes, our products empower you to achieve excellence effortlessly."
+    benefits={[
+      "Reliable and robust solutions ensuring long-lasting performance.",
+      "Innovative technology tailored to meet modern healthcare demands.",
+      "Dedicated customer support committed to your success.",
+    ]}
+  />
+  <!--Testimonials section-->
+  <TestimonialsSectionAlt
+    title="What Our Customers Say"
+    testimonials={testimonials}
+  />
+</MainLayout>
