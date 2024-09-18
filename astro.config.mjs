@@ -8,10 +8,10 @@ import starlight from "@astrojs/starlight";
 // https://astro.build/config
 export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
-  site: "https://www.samarthmeditech.com",
-  image: {
-    domains: ["images.unsplash.com"],
-  },
+  site: "https://Narasimhadattapati.github.io",
+  // image: {
+  //   domains: ["images.unsplash.com"],
+  // },
   // i18n: {
   //   defaultLocale: "en",
   //   locales: ["en", "fr"],
