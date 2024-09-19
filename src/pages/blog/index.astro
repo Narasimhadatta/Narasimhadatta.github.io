@@ -2,8 +2,8 @@
 // Import necessary components, modules and types
 import MainLayout from "@/layouts/MainLayout.astro";
 import CardBlog from "@components/ui/cards/CardBlog.astro";
-import CardBlogRecent from "@components/ui/cards/CardBlogRecent.astro";
-import CardInsight from "@components/ui/cards/CardInsight.astro";
+// import CardBlogRecent from "@components/ui/cards/CardBlogRecent.astro";
+// import CardInsight from "@components/ui/cards/CardInsight.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
@@ -14,19 +14,19 @@ const englishBlogEntries = await getCollection("blog", ({ id }) => {
   return id.startsWith("en/");
 });
 
-const englishInsightsEntries = await getCollection("insights", ({ id }) => {
-  return id.startsWith("en/");
-});
+// const englishInsightsEntries = await getCollection("insights", ({ id }) => {
+//   return id.startsWith("en/");
+// });
 
 const blogPosts: CollectionEntry<"blog">[] = englishBlogEntries.sort(
   (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 // Get all insights posts
-const insightPosts: CollectionEntry<"insights">[] = englishInsightsEntries;
+// const insightPosts: CollectionEntry<"insights">[] = englishInsightsEntries;
 
 // Separate the most recent post from others
-const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
+// const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
 const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
 
 // Define variables for page content
@@ -34,9 +34,9 @@ const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
 const title: string = "Your Portal to Innovation and Success";
 const subTitle: string =
   "Explore the latest news, tips, and insights from Samarth Meditech to elevate your healthcare and business operations. From software innovations to industry best practices, our blog is your go-to resource for all things healthcare technology and business management. Stay informed and stay ahead with expert advice and updates tailored to your needs.";
-const secondTitle: string = "Insights";
-const secondSubTitle: string =
-  "Stay up-to-date with the latest trends and developments in the construction industry with insights from ScrewFast's team of industry experts. ";
+// const secondTitle: string = "Insights";
+// const secondSubTitle: string =
+  // "Stay up-to-date with the latest trends and developments in the construction industry with insights from ScrewFast's team of industry experts. ";
 
 const pageTitle: string = `Blog | ${SITE.title}`;
 ---
