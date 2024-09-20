@@ -52,11 +52,11 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
         
           {product.data.title}
         </h1> -->
-        <div class="product-title font-bold tracking-tighter sm:text-5xl md:text-6xl ">
+        <div class="product-title  font-bold tracking-tighter sm:text-5xl md:text-6xl dark:text-blueProduct">
           {product.data.title}
 
         </div>
-        <p class="text-lg text-neutral-600 dark:text-neutral-400 dark:bg-neutral-800">
+        <p class="text-lg text-neutral-600 dark:text-neutral-500 dark:bg-neutral-800">
           {product.data.description}
         </p>
       </div>
@@ -78,10 +78,10 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
     </div>
   </section>
   <section class="bg-section">
-    <div class="subtitle">
+    <div class="subtitle text-neutral-600 dark:text-neutral-200">
       BACKGROUND
     </div>
-    <p class="background-text dark:bg-neutral-800">
+    <p class="background-text  text-neutral-600 dark:text-neutral-200 dark:bg-neutral-800">
       {product.data.main.backgroundText}
     </p>
 
@@ -90,11 +90,11 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
 
   <section>
       <div class="bg-section">
-        <div class="title font-bold sm:text-15xl md:text-6xl lg:text-7xl">FEATURES IMPLEMENTED</div>
+        <div class="title  font-bold   sm:text-2xl md:text-6xl lg:text-7xl ">FEATURES IMPLEMENTED</div>
       </div>
       <div>
-        <div class="feature-title">{product.data.features.feat1title}</div>
-        <p class="features">
+        <div class="feature-title text-neutral-600 dark:text-neutral-100">{product.data.features.feat1title}</div>
+        <p class="features text-neutral-600 dark:text-neutral-200">
           
           {product.data.features.feature1}
         </p>
@@ -109,9 +109,9 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
         />
         </div>
       </div>
-      <div class="feature-title">{product.data.features.feat2title}</div>
+      <div class="feature-title text-neutral-600 dark:text-neutral-100">{product.data.features.feat2title}</div>
 
-      <p class="features">
+      <p class="features text-neutral-600 dark:text-neutral-200">
         {product.data.features.feature2}
 
       </p>
@@ -125,9 +125,9 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
         loading={"eager"}
       />
       </div>
-      <div class="feature-title">{product.data.features.feat3title}</div>
+      <div class="feature-title text-neutral-600 dark:text-neutral-100">{product.data.features.feat3title}</div>
 
-      <p class="features">
+      <p class="features text-neutral-600 dark:text-neutral-200">
         {product.data.features.feature3}
 
       </p>
@@ -145,8 +145,8 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
   </section>
 <section>
   <div>
-    <div class="title font-bold sm:text-15xl md:text-6xl lg:text-7xl dark:text-blue-400">TECHNICAL ASPECTS</div>
-    <p class="background-text dark:bg-neutral-800">
+    <div class="title font-bold sm:text-15xl md:text-6xl lg:text-7xl dark:blueProduct">TECHNICAL ASPECTS</div>
+    <p class="background-text text-neutral-600 dark:text-neutral-200 dark:bg-neutral-800">
      {product.data.features.technicalAspects}
     </p>
   </div>

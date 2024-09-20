@@ -9,6 +9,7 @@ export default {
   theme: {
     colors: {
       transparent: "transparent",
+      blueProduct: "#328cff",
       current: "currentColor",
       black: "#000000",
       white: "#ffffff",
