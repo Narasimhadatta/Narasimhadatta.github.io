@@ -52,7 +52,7 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
         
           {product.data.title}
         </h1> -->
-        <div class="product-title  font-bold tracking-tighter sm:text-5xl md:text-6xl dark:text-blueProduct">
+        <div class="product-title  font-bold tracking-tighter sm:text-7xl md:text-6xl lg:text-9xl dark:text-blueProduct">
           {product.data.title}
 
         </div>
@@ -78,7 +78,7 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
     </div>
   </section>
   <section class="bg-section">
-    <div class="subtitle text-neutral-600 dark:text-neutral-200">
+    <div class="subtitle text-pretty font-light text-neutral-700 dark:text-neutral-300 sm:text-xl">
       BACKGROUND
     </div>
     <p class="background-text  text-neutral-600 dark:text-neutral-200 dark:bg-neutral-800">
@@ -90,7 +90,7 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
 
   <section>
       <div class="bg-section">
-        <div class="title  font-bold   sm:text-2xl md:text-6xl lg:text-7xl ">FEATURES IMPLEMENTED</div>
+        <div class="title font-bold   sm:text-4xl md:text-6xl lg:text-7xl dark:text-blueProduct ">FEATURES IMPLEMENTED</div>
       </div>
       <div>
         <div class="feature-title text-neutral-600 dark:text-neutral-100">{product.data.features.feat1title}</div>
@@ -145,7 +145,7 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
   </section>
 <section>
   <div>
-    <div class="title font-bold sm:text-15xl md:text-6xl lg:text-7xl dark:blueProduct">TECHNICAL ASPECTS</div>
+    <div class="title font-bold sm:text-9xl md:text-6xl lg:text-7xl dark:text-blueProduct">TECHNICAL ASPECTS</div>
     <p class="background-text text-neutral-600 dark:text-neutral-200 dark:bg-neutral-800">
      {product.data.features.technicalAspects}
     </p>
@@ -329,7 +329,6 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
 <style>
   .product-title{
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 7rem;
       color:rgb(1, 1, 110);
   }
   .intro-video{    
@@ -361,7 +360,6 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
     .subtitle{
       font-style: bold;
       color: rgb(34, 34, 43);
-      font-size: 1.25rem;
       grid-column: 2/3;
       font-family: "GothamBold",-apple-system,BlinkMacSystemFont,Verdana,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;;
       padding-left: 0.5%;
@@ -383,10 +381,9 @@ const pageTitle: string = `${product.data.title} | ${SITE.title}`;
     }
    .title{
     
-    font-size:3rem;
     width:max-content;
-    padding-left: 7%;
-    color:rgb(1, 1, 110);
+    padding-left: 5%;
+    color:rgb(1, 30, 110);
     padding-top: 25px;
     padding-bottom: 2%;
     font-family: Arial, Helvetica, sans-serif;
