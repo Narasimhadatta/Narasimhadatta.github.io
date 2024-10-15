@@ -10,6 +10,7 @@ import TestimonialsSectionAlt from "@components/sections/testimonials/Testimonia
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
+// import testimonial1 from "@images/testmonial1.png"
 // import testimonialA from "src/images/testmonial1.png";
 // Fetching all the product related content and sorting it by main.id
 const product: CollectionEntry<"products">[] = (
@@ -31,7 +32,7 @@ const testimonials = [
       " \"Ayuci has completely transformed the way we manage our hospital operations. From booking appointments to generating IPD and OPD reports, everything is seamless. The ability to add doctors and employees across all roles and keep track of schedules has saved us so much time. It’s user-friendly and integrates well with our payment systems. Ayuci is now an essential part of our day-to-day operations\" ",
     author: "Dr Shishir Devaraju",
     role: " Urologist |  MBBS | MS| MCH",
-    avatarSrc: "src/images/testmonial1.png",
+    avatarSrc: "testmonial1.png",
     avatarAlt: "Image Description",
   },
   // Second testimonial data
@@ -40,7 +41,7 @@ const testimonials = [
       " \"Ayuci has made hospital management incredibly efficient. The system’s ability to handle appointments, billing, and report generation is top-notch. We’ve also benefited from its intuitive interface for managing both OPD and IPD services. It's a powerful tool for streamlining healthcare management, and we couldn’t be happier with its performance.\" ",
     author: "Dr Vidya Joshi,",
     role: " Gynaecologist| MBBS",
-    avatarSrc:"src/images/testimonial2.png",
+    avatarSrc:"testimonial2.png",
     
     avatarAlt: "",
   },
@@ -51,7 +52,7 @@ const testimonials = [
     author: "Vikram Patil",
     role: "Chief Investment Officer | Investment Analyst ",
     avatarSrc:
-      "src/images/testimonial3.jpg",
+      "testimonial3.jpg",
     avatarAlt: "Image Description",
   },
 ];
