@@ -5,7 +5,11 @@ import EmailFooterInput from "@components/ui/forms/input/EmailFooterInput.astro"
 import enStrings from "@utils/navigation.ts";
 // import frStrings from "@utils/fr/navigation.ts";
 // import Icon from "@components/ui/icons/Icon.astro";
+import { Image } from "astro:assets";
+
 import BrandLogo from "@components/BrandLogo.astro";
+import iso from "@images/iso.png";
+
 // import { SITE } from "@data/constants";
 
 // Select the correct translation based on the page's lang prop:
@@ -66,6 +70,10 @@ const sectionThreeContent: string = Astro.currentLocale === "en" ?  "Stay update
             {sectionThreeContent}
           </p>
         </form>
+      </div>
+      <div>
+        <Image class="" src={iso} alt="Mockup of floating boxes" />
+      
       </div>
     </div>
 
