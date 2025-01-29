@@ -3,7 +3,7 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
-// import ClientsSection from "@components/sections/landing/ClientsSection.astro";
+import ClientsSection from "@components/sections/landing/ClientsSection.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
@@ -18,7 +18,7 @@ import features from "@data/features.json";
 import construction from "@images/dataPrivacy.jpg";
 import tools from "@images/analytics1.jpg";
 import dashboard from "@images/dashboard-image.jpg";
-
+import mySmartShalla from "@images/mysmartshalla.png";
 // const avatarSrcs: Array<string> = [
 //   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
 //   "https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -113,10 +113,14 @@ import dashboard from "@images/dashboard-image.jpg";
 
 
 
+  <ClientsSection
+  title="Powering Hospitals, Elevating Care – Our Clients Speak for Us!"
+  src={mySmartShalla}
+  alt="mysmartshalla"
+  />
   <HeroSectionAlt
     title="Optimizing Operational Efficiency"
     subTitle="Harness the power of Ayuci and Asset Management to elevate your healthcare and business operations with Samarth Meditech."
     url="/contact"
   />
-  
 </MainLayout>
