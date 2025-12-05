@@ -493,6 +493,13 @@ declare module 'astro:content' {
   collection: "products";
   data: InferEntrySchema<"products">
 } & { render(): Render[".md"] };
+"seva360.md": {
+	id: "seva360.md";
+  slug: "seva360";
+  body: string;
+  collection: "products";
+  data: InferEntrySchema<"products">
+} & { render(): Render[".md"] };
 "t845.md": {
 	id: "t845.md";
   slug: "t845";
